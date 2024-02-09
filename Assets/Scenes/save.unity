@@ -440,7 +440,9 @@ MonoBehaviour:
       lives","value":{"$content":3,"$type":"System.Int32"},"typeHandle":{"Identification":"System.Int32,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"current
       lives","value":{"$content":3,"$type":"System.Int32"},"typeHandle":{"Identification":"System.Int32,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"ship
+      position","value":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"},"typeHandle":{"Identification":"UnityEngine.Vector3,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!4 &664170070
 Transform:
@@ -504,9 +506,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"TimerDisplay","value":null,"typeHandle":{"Identification":"TMPro.TextMeshPro,
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"TimerDisplay","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"TMPro.TextMeshProUGUI,
       Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
+    _objectReferences:
+    - {fileID: 822004181}
 --- !u!4 &751295896
 Transform:
   m_ObjectHideFlags: 0
@@ -552,7 +555,7 @@ GameObject:
   - component: {fileID: 920129859}
   - component: {fileID: 920129858}
   - component: {fileID: 920129857}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +622,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.01, y: 0.01}
@@ -782,6 +785,10 @@ PrefabInstance:
     - target: {fileID: 6533016058763649943, guid: c7ceecfaee5eaae4ab82de934fcdf8db, type: 3}
       propertyPath: m_Name
       value: gun (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533016058763649943, guid: c7ceecfaee5eaae4ab82de934fcdf8db, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1134,6 +1141,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gun
       objectReference: {fileID: 0}
+    - target: {fileID: 6533016058763649943, guid: c7ceecfaee5eaae4ab82de934fcdf8db, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1238,16 +1249,26 @@ PrefabInstance:
     - target: {fileID: 8350069070610019538, guid: 6b811f8a7dd927a4183da6927d7efe52, type: 3}
       propertyPath: _data._json
       value: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"timerdisplay","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"TMPro.TextMeshProUGUI,
+        Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"scoredisplay","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"TMPro.TextMeshProUGUI,
+        Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"livesdisplay","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"TMPro.TextMeshProUGUI,
         Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
       objectReference: {fileID: 0}
     - target: {fileID: 8350069070610019538, guid: 6b811f8a7dd927a4183da6927d7efe52, type: 3}
       propertyPath: _data._objectReferences.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8350069070610019538, guid: 6b811f8a7dd927a4183da6927d7efe52, type: 3}
       propertyPath: _data._objectReferences.Array.data[0]
       value: 
       objectReference: {fileID: 822004181}
+    - target: {fileID: 8350069070610019538, guid: 6b811f8a7dd927a4183da6927d7efe52, type: 3}
+      propertyPath: _data._objectReferences.Array.data[1]
+      value: 
+      objectReference: {fileID: 1386973444}
+    - target: {fileID: 8350069070610019538, guid: 6b811f8a7dd927a4183da6927d7efe52, type: 3}
+      propertyPath: _data._objectReferences.Array.data[2]
+      value: 
+      objectReference: {fileID: 1512272300}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1256,6 +1277,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1496131153}
   m_SourcePrefab: {fileID: 100100000, guid: 6b811f8a7dd927a4183da6927d7efe52, type: 3}
+--- !u!1001 &5090167171626645963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 679342528938438538, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
+      propertyPath: m_Name
+      value: enemy 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236736668503959917, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.792851
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236736668503959917, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.6924672
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236736668503959917, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236736668503959917, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236736668503959917, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236736668503959917, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236736668503959917, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236736668503959917, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236736668503959917, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236736668503959917, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec9ae7efb820ed54dbce63404769820e, type: 3}
 --- !u!1001 &8902256378984961507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1264,6 +1342,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 205830981764023080, guid: 487692971c6428345a54f26bb067688d, type: 3}
+      propertyPath: _data._json
+      value: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"speed","value":{"$content":6.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"health","value":{"$content":2.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"smallprefab","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 205830981764023080, guid: 487692971c6428345a54f26bb067688d, type: 3}
+      propertyPath: _data._objectReferences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 205830981764023080, guid: 487692971c6428345a54f26bb067688d, type: 3}
+      propertyPath: _data._objectReferences.Array.data[0]
+      value: 
+      objectReference: {fileID: 1714431314047642442, guid: 677088d4ae810e646a84daa2c2482f33, type: 3}
     - target: {fileID: 4095117966000334691, guid: 487692971c6428345a54f26bb067688d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.26
@@ -1324,3 +1417,4 @@ SceneRoots:
   - {fileID: 920129862}
   - {fileID: 398179620}
   - {fileID: 514615551}
+  - {fileID: 5090167171626645963}
